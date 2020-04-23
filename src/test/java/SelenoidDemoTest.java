@@ -3,6 +3,7 @@ import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -19,12 +20,16 @@ public class SelenoidDemoTest {
 
     @BeforeClass
     public void setUp () {
+//        System.setProperty("webdriver.gecko.driver" ,  "/Users/lovely.munjal/Downloads/geckodriver");
+//        driver = new FirefoxDriver();
+
         ChromeOptions options = new ChromeOptions();
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC",true);
         capabilities.setCapability("enableVideo", true);
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         options.addArguments("--window-size=1920,1080");
+
 //        options.addArguments("-video-output-dir=/opt/selenoid/video");
 //        options.addArguments("--video-output-dir=/opt/selenoid/video");
 //        options.addArguments("vnc=true");
